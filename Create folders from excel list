@@ -1,8 +1,4 @@
-#WHAT IT DOES
 #Creates folders named based off of defined range in a defined excel sheet. (e.g. C2 = 'Brian 3-31-2016', folder name = 'Brian 3-31-2016')
-#REASON
-#had to create folders to save quarterly reports going back 3 years (230+ file paths)
-
 
 def folder_creation(EXCEL_FILE_DIRECTORY, FOLDER_CREATION_LOCATION, EXCEL_FILE_NAME):
         
