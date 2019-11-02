@@ -1,0 +1,37 @@
+#WHAT IT DOES
+#Creates folders named based off of defined range in a defined excel sheet. (e.g. C2 = Brian 3-31-2016, folder name = Brian 3-31-2016)
+#REASON
+#had to create files to save quarterly reports going back 3 years (230+ file paths)
+
+
+def folder_creation(EXCEL_FILE_DIRECTORY, FOLDER_CREATION_LOCATION, EXCEL_FILE_NAME):
+        
+        ---------------------------------------------------------------
+        
+        #changes directory (active location on PC) to where you specify
+        os.chdir(EXCEL_FILE_DIRECTORY)
+        
+        #opens up workbook you would like to read data off of
+        workbook = openpyxl.load_workbook(EXCEL_FILE_NAME)
+        
+        #defines sheet you would like the read off of
+        sheet = workbook.get_sheet_by_name('Sheet1')
+        
+        ---------------------------------------------------------------
+        
+        #defines cell range you would like the read from
+        #sheet.iter_cols iterates through defined range
+            #col_value = the data in cell C2 until there is no data (starts at row 2 column 3 and goes until it can't find a value)
+            
+        col_values = [cell.value for col in sheet.iter_cols(min_row=2, max_row=None, min_col=3) for cell in col]
+        
+        ---------------------------------------------------------------
+        
+        #creates a folder based off of the values defined above and puts them into the defined directory
+        for value in col_values:
+            folderName = value
+            baseDir = FOLDER_CREATION_LOCATION
+            os.makedirs(os.path.join(baseDir, folderName))
+            
+#input = location of excel file, location where you would like the folders created, the name of the excel file            
+folder_creation('C:\\Users\\Brian Paur\\Desktop\\Folder_Project','C:\\Users\\Brian Paur\\Desktop\\Folder_Project','Account_list.xlsx')
