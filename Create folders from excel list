@@ -29,5 +29,7 @@ def folder_creation(EXCEL_FILE_DIRECTORY, FOLDER_CREATION_LOCATION, EXCEL_FILE_N
             baseDir = FOLDER_CREATION_LOCATION
             os.makedirs(os.path.join(baseDir, folderName))
             
-#input = location of excel file, location where you would like the folders created, the name of the excel file            
-folder_creation('C:\\Users\\Brian Paur\\Desktop\\Folder_Project','C:\\Users\\Brian Paur\\Desktop\\Folder_Project','Account_list.xlsx')
+#input = location of excel file, location where you would like the folders created, the name of the excel file 
+folder_creation(EXCEL_FILE_DIRECTORY, FOLDER_CREATION_LOCATION, EXCEL_FILE_NAME)
+#EXAMPLE:
+#folder_creation('C:\\Users\\Brian Paur\\Desktop\\Folder_Project','C:\\Users\\Brian Paur\\Desktop\\Folder_Project','Account_list.xlsx')
