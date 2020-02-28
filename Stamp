@@ -15,7 +15,7 @@ writer_output = PdfWriter()
 signature_input = PdfReader(signature_file)
 signature = signature_input.pages[0]
 
-#loop through pages
+#loops through pages
 
 for i in range(len(reader_input.pages)):
     merger = PageMerge(reader_input.pages[i])
