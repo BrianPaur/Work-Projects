@@ -1,2 +1,2 @@
 # Work-Projects
-Projects use to automate my work tasks
+Projects used to automate my work tasks
